@@ -1,0 +1,51 @@
+{
+  "name": "f_coka_vite_antd_ssr_entry",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "dev:ssr": "SSR=true vite --host",
+    "build": "rm -rf dist && npm run build:spa && npm run build:ssr",
+    "build:spa": "KIND=spa vite build",
+    "build:client": "KIND=client vite build",
+    "build:server": "KIND=server vite build",
+    "build:ssr": "npm run build:client && npm run build:server",
+    "start": "coka start 3000"
+  },
+  "dependencies": {
+    "@codixjs/codix": "^1.0.0",
+    "@codixjs/fetch": "^1.0.0",
+    "@codixjs/server": "^1.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.6",
+    "@codixjs/vite": "^1.0.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "less": "^4.1.3",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8"
+  },
+  "config": {
+    "entries": {
+      "spa": "./src/entries/spa.tsx",
+      "client": "./src/entries/client.tsx",
+      "server": "./src/entries/server.tsx"
+    },
+    "skips": [
+      "/@react-refresh",
+      "/@id/vite/modulepreload-polyfill",
+      "/@vite/client"
+    ],
+    "rewrites": {
+      "/index.html": "/"
+    }
+  },
+  "manifest": {
+
+  }
+}
