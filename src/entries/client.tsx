@@ -11,6 +11,6 @@ const { Bootstrap } = app.build();
 window.onload = () => {
   hydrateRoot(
     document.getElementById('root'),
-    <Bootstrap>404 Not Found</Bootstrap>
+    <Bootstrap pathes={routers}>404 Not Found</Bootstrap>
   );
 }

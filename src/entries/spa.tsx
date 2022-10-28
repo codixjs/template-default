@@ -9,4 +9,4 @@ export const routers = createNewRouters(app);
 const { Bootstrap } = app.build();
 const react = createRoot(document.getElementById('root'));
 
-react.render(<Bootstrap>404 Not Found</Bootstrap>);
+react.render(<Bootstrap pathes={routers}>404 Not Found</Bootstrap>);
