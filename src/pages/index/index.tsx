@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAsync } from '@codixjs/fetch';
+import styles from './index.module.less';
 export default function Welcome() {
   const { data, success, error, execute, loading } = useAsync('test', () => new Promise<{ a: number }>((resolve, reject) => {
     setTimeout(() => resolve({
@@ -7,7 +8,7 @@ export default function Welcome() {
     }), 5000);
   }))
 
-  return <div>Welcome: 
+  return <div className={styles.bg}>Welcome: 
     <p><button onClick={execute}>{ 
       loading
         ? 'load'

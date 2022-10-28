@@ -1,3 +1,4 @@
+import '../style.less';
 import React from 'react';
 import createNewRouters from '../index';
 import { Application, PopstateHistoryMode } from '@codixjs/codix';
